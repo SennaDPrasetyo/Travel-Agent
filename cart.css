@@ -64,3 +64,13 @@ ul {
     color: red;
     font-style: italic;
 }
+
+.alert {
+    color: darkred;
+    font-size:large;
+    font-style: italic 
+}
+
+.kembali {
+    padding-top: 10px
+}

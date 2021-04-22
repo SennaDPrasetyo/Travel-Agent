@@ -159,6 +159,9 @@ function generateCard(data) {
                         function deleteData() {
                             divCard.remove()
                             pilihan[key] = 0
+                            if (productCard.childNodes.length == 0) {
+                                productCard.innerHTML = 'Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun'
+                            }
                         }
                     divDetails.appendChild(buttonDelete)
 

@@ -1,0 +1,49 @@
+body {
+    margin: 0px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    background-color: grey;
+    padding: 10px;
+    margin: 10px;
+    width: 30%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.card img {
+    width: 70%;
+}
+
+.button {
+    border: none;
+    width: 20%;
+    padding: 3px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 25px;
+    cursor: pointer;
+}
+
+#plus, #minus {
+    font-size: 20px;
+    width: 6%;
+    float: right;
+}
+
+.inputMalam{
+    
+    width: 30%;
+}

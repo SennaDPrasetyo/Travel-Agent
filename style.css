@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-image: url('flat-lay-yellow-luggage-with-copy-space.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.color-decoration {
+    color: black;
+    text-decoration: none;
+}
+
+.list-style {
+    list-style-type: none;
+    display: inline-block;
+    width: 90px;
+    font-family: "Roboto", cursive;
+    letter-spacing: 3px;
+}
+div.fixed {
+    position: fixed;
+    left: 510px;
+    bottom: 570px;
+}
+
+.li {
+    left: 100px;
+}
+
+img {
+    width: 10%;
+    position: fixed;
+    bottom: 527px;
+    left: 7px;
+}
+
+h2 {
+    font-size: x-large;
+    font-weight: 500;
+    position: fixed;
+    top: 150px;
+    left: 100px;
+    font-family: "verdana";
+    letter-spacing: 2px;
+}
+
+.khusus {
+    font-weight: 800;
+}
+
+p {
+    color: #0a1746;
+    position: fixed;
+    top: 195px;
+    left: 103px;
+    font-family: "Verdana"
+}
+
+.col {
+	margin-top: 12px;
+	display: inline-block;
+	position: relative;
+    top: 230px;
+    left: 95px;
+}
+
+.textbox {
+	border: 0;
+	padding: 2px 0;
+	border-bottom: 1px solid #ccc;
+	font: 13px/24px "Lato", Arial, sans-serif;
+	color: #333;
+	width: 275px;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+    background: transparent;
+}
+.textbox ~ .focus-border{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px; 
+	background-color: #3399FF; 
+	transition: 0.4s;
+}
+.textbox:focus{
+	outline: none;
+}
+.textbox:focus ~ .focus-border{
+	width: 100%;
+	transition: 0.4s;
+	left: 0;
+}
+
+.myButton {
+	background-color:transparent;
+	border-radius:32px;
+	border:1px solid transparent;
+	display:inline-block;
+	cursor: pointer;
+	color:#3a3a3a;
+	font-family:Verdana;
+	font-size:13px;
+	font-weight:normal;
+	padding:8px 13px;
+	text-decoration:none;
+    position: fixed;
+    top: 351px;
+    left: 89px;
+    opacity: 0.8;
+}
+
+.myButton:hover {
+	background-color:transparent;
+}

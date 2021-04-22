@@ -1,0 +1,66 @@
+.card{
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border-radius: 16px;
+    padding: 8px;
+    width: auto;
+}
+
+.cardImg{
+    float:left;
+    display: inline-block;
+    text-align: right;
+    background-color: white;
+    margin-right: 0px;
+    border-radius: 16px;
+    padding: 8px;
+}
+.cardDetails{
+    float:left;
+    display: inline-block;
+    text-align: left;
+    background-color: white;
+    margin-right: 0px;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.card img{
+    width: 150px;
+    display: block;
+    margin: 8px auto;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    padding-inline-start: 11px;
+}
+
+.harga {
+    color:darkred;
+    font-weight: bold
+}
+
+.kurangi {
+    background-color: darkslateblue;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.delete {
+    background-color:darkred;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.kurangiAlert {
+    color: red;
+    font-style: italic;
+}

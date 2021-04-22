@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>checkout</title>
+</head>
+<body>
+  <p4> <strong> CHECKOUT </p4> </strong> <br>
+  <p1> Payment Option </p1>
+  <br>
+    <select id="selectPage">
+      <option value='home'>Select Payment</option>
+      <option value="creditCard">Credit Card</option>
+      <option value="bankTransfer">Bank Transfer</option>
+    </select>
+    <h1 id="creditCard">            
+      <h3>Payment</h3>
+
+      <label for="cname">Name on Card</label>
+      <input type="text" name="cardname" placeholder="Your Name">
+      <br>
+      <label for="ccnum">Credit card number</label>
+      <input type="text" name="cardnumber" placeholder="1111-2222-3333-4444">
+      <br>
+      <label for="expmonth">Exp Month</label>
+      <input type="text" name="expmonth" placeholder="December">
+      <br>
+      <label for="expyear">Exp Year</label>
+      <input type="text" name="expyear" placeholder="2022">
+      <br>
+      <label for="cvv">CVV</label>
+      <input type="text" name="cvv" placeholder="616">
+    </div>
+
+  </div>
+  <br>
+  <input type="submit" value="Continue to checkout" class="btn">
+</form>
+</div></h1>
+    <h1 id="bankTransfer">
+      <h2>BANK MANDORO (Virtual Account)</h2>
+      <h5>Account Number</h5>
+      <h3>1122 3344 5566 7788</h3>
+      <p>To ensure Virtual Account number remains the same,<br>
+         please complate pament before creating another<br>
+         order with Virtual Account.<br>
+         Accepts transfer from Bank Mandiri Only</p>
+    </h1>
+    <input type="submit" value="Continue to checkout" class="btn">
+
+
+
+    <script>
+      let selectBox = document.getElementById('selectPage')
+
+      selectBox.addEventListener('change', function (event) {
+        console.log(event.target.value)
+        let display = event.target.value // Product, Cart, Home
+        if (display === 'home') {
+          document.getElementById('creditCard').style.display = 'none'
+          document.getElementById('bankTransfer').style.display = 'none'
+        }
+        if (display === 'creditCard') {
+          document.getElementById('creditCard').style.display = 'block'
+          document.getElementById('bankTransfer').style.display = 'none'
+        }
+  
+        if (display === 'bankTransfer') {
+          document.getElementById('creditCard').style.display = 'none'
+          document.getElementById('bankTransfer').style.display = 'block'
+        }
+      })
+   </script>
+</body>
+</html>

@@ -74,86 +74,84 @@
   <div id="cart">
   </div>
 
-<button class='lihatKeranjang button-position' onClick='window.location="#card"'>Lihat Keranjang</button>        
-<h2 style = >Keranjang Saya</h2>
-<div id="card">Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun</div>
-<button id = 'kembali' class='lihatKeranjang button-position' onClick='window.location="#contentId"'>Kembali ke Daftar Produk</button>  
-<div id="pembayaran">
-<p4> <strong> CHECKOUT </p4> </strong> <br>
-  <p1> Payment Option </p1>
->>>>>>> Stashed changes
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <h2 style=>Keranjang Saya</h2>
-  <div id="card">Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun</div>
-  <button id='kembali' onClick='window.location="#contentId"'>Kembali ke Daftar Produk</button>
-  <script src="cart.js"></script>
-  <div id="pembayaran">
+<button class='lihatKeranjang button-position-keranjang' onClick='window.location="#card"'>Lihat Keranjang</button>
+<button id = 'kembali' class='lihatKeranjang button-position-daftar' onClick='window.location="#contentId"'>Kembali ke Daftar Produk</button>  
+<div id ='total'></div>
+<div id="pembayaran" class="font">
     <p4> <strong> CHECKOUT </p4> </strong> <br>
-    <p1> Payment Option </p1>
-    <br>
-    <select id="selectPage">
-      <option value='home'>Select Payment</option>
-      <option value="creditCard">Credit Card</option>
-      <option value="bankTransfer">Bank Transfer</option>
-    </select>
-    <h1 id="creditCard">
-      <h3>Payment</h3>
-      <label for="cname">Name on Card</label>
-      <input type="text" name="cardname" placeholder="Your Name">
+      <p1> Payment Option </p1>
       <br>
-      <label for="ccnum">Credit card number</label>
-      <input type="text" name="cardnumber" placeholder="1111-2222-3333-4444">
       <br>
-      <label for="expmonth">Exp Month</label>
-      <input type="text" name="expmonth" placeholder="December">
       <br>
-      <label for="expyear">Exp Year</label>
-      <input type="text" name="expyear" placeholder="2022">
       <br>
-      <label for="cvv">CVV</label>
-      <input type="text" name="cvv" placeholder="616">
-  </div>
-  </div>
-  <br>
-  <input id="checkoutCredit" type="submit" value="Continue to checkout" class="btn">
-  </form>
-  </div>
-  </h1>
-  <h1 id="bankTransfer">
-    <h2>BANK MANDORO (Virtual Account)</h2>
-    <h5>Account Number</h5>
-    <h3>1122 3344 5566 7788</h3>
-    <p>To ensure Virtual Account number remains the same,<br>
-      please complate pament before creating another<br>
-      order with Virtual Account.<br>
-      Accepts transfer from Bank Mandiri Only</p>
-  </h1>
-  <input id="checkoutVirtual" type="submit" value="Continue to checkout" class="btn">
-  <script>
-    let selectBox = document.getElementById('selectPage')
-
-    selectBox.addEventListener('change', function (event) {
-      console.log(event.target.value)
-      let display = event.target.value // Product, Cart, Home
-      if (display === 'home') {
-        document.getElementById('creditCard').style.display = 'none'
-        document.getElementById('bankTransfer').style.display = 'none'
-      }
-      if (display === 'creditCard') {
-        document.getElementById('creditCard').style.display = 'block'
-        document.getElementById('bankTransfer').style.display = 'none'
-      }
-
-      if (display === 'bankTransfer') {
-        document.getElementById('creditCard').style.display = 'none'
-        document.getElementById('bankTransfer').style.display = 'block'
-      }
-    })
+      <br>
+      <br>
+      <h2 style=>Keranjang Saya</h2>
+      <div id="card">Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun</div>
+      <button id='kembali' onClick='window.location="#contentId"'>Kembali ke Daftar Produk</button>
+      <script src="cart.js"></script>
+      <button id='checkoutButton' class = 'checkout' onClick='checkoutButton()'>Check Out</button>
+      <div id="pembayaran" style='display:none'>
+        <p4> <strong> CHECKOUT </p4> </strong> <br>
+        <p1> Payment Option </p1>
+        <br>
+        <select id="selectPage">
+          <option value='home'>Select Payment</option>
+          <option value="creditCard">Credit Card</option>
+          <option value="bankTransfer">Bank Transfer</option>
+        </select>
+        <div id="creditCard">
+          <h3>Payment</h3>
+          <label for="cname">Name on Card</label>
+          <input type="text" name="cardname" placeholder="Your Name">
+          <br>
+          <label for="ccnum">Credit card number</label>
+          <input type="text" name="cardnumber" placeholder="1111-2222-3333-4444">
+          <br>
+          <label for="expmonth">Exp Month</label>
+          <input type="text" name="expmonth" placeholder="December">
+          <br>
+          <label for="expyear">Exp Year</label>
+          <input type="text" name="expyear" placeholder="2022">
+          <br>
+          <label for="cvv">CVV</label>
+          <input type="text" name="cvv" placeholder="616">
+          <br>
+          <input id="checkoutCredit" type="submit" value="Continue to checkout" class="btn">
+        </form>
+      </div>
+      </h1>
+      <div id="bankTransfer">
+        <h2>BANK MANDORO (Virtual Account)</h2>
+        <h5>Account Number</h5>
+        <h3>1122 3344 5566 7788</h3>
+        <p>To ensure Virtual Account number remains the same,<br>
+          please complate pament before creating another<br>
+          order with Virtual Account.<br>
+          Accepts transfer from Bank Mandiri Only</p>
+      </h1>
+      <input id="checkoutVirtual" type="submit" value="Continue to checkout" class="btn">
+      </div>
+      <script>
+        let selectBox = document.getElementById('selectPage')
+    
+        selectBox.addEventListener('change', function (event) {
+          console.log(event.target.value)
+          let display = event.target.value // Product, Cart, Home
+          if (display === 'home') {
+            document.getElementById('creditCard').style.display = 'none'
+            document.getElementById('bankTransfer').style.display = 'none'
+          }
+          if (display === 'creditCard') {
+            document.getElementById('creditCard').style.display = 'block'
+            document.getElementById('bankTransfer').style.display = 'none'
+          }
+    
+          if (display === 'bankTransfer') {
+            document.getElementById('creditCard').style.display = 'none'
+            document.getElementById('bankTransfer').style.display = 'block'
+          }
+        })
   </script>
   </div>
   <script src="script.js"></script>

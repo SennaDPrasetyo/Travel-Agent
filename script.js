@@ -223,6 +223,11 @@ function generateCart(destinasi) {
 
 
             divDetail.appendChild(ol)
+            
+            let addMalamDiv = document.createElement('div')
+            addMalamDiv.className = 'addMalamDiv'
+            addMalamDiv.style.marginBottom = '0.5rem'
+            divDetail.appendChild(addMalamDiv)
 
             
             let cartDiv = document.createElement('div')
@@ -234,18 +239,19 @@ function generateCart(destinasi) {
             button.setAttribute('packageId',destinasi[key][i].id)
             button.innerHTML = "Add to Cart"
             button.className = 'addToCart'
+            button.style.marginBottom = '1rem'
             cartDiv.appendChild(button)
 
                 function buttonChangeColor(event) {
                     button.className = 'addToCartGrey'
                 }
 
-            let addMalamDiv = document.createElement('div')
-            addMalamDiv.className = 'addMalamDiv'
-            cartDiv.appendChild(addMalamDiv)
+            
+            // cartDiv.appendChild(addMalamDiv)
 
             let label = document.createElement('label')
             label.innerHTML = 'Jumlah Malam:'
+            label.style.marginRight = '1rem'
             addMalamDiv.appendChild(label)
 
             let addButton = document.createElement('button')
@@ -363,6 +369,14 @@ Pilihan =
 }
 */
 
+let totalSemua = {}
+
+let totalAmount = 0
+
+let totalCheckout = document.getElementById('total')
+let amount = document.createElement('h2')
+totalCheckout.appendChild(amount)
+
 function generateCard(data) {
     productCard.innerHTML = ''
     for (let key in data) {
@@ -411,6 +425,7 @@ function generateCard(data) {
 
                     let harga = document.createElement('h3')
                     harga.className = 'harga'
+                    harga.setAttribute = ('hargaTotal', key)
                     let jumlahMalam = data[key]
                     let hargaPaket = destinasi[kota][i].Harga
 
@@ -444,11 +459,23 @@ function generateCard(data) {
                             harga.innerHTML = ''
                             malam.innerHTML = ''
                             jumlahMalam -= 1
-                            let hargaPaket = destinasi[kota][i].Harga
-                            let total = (Number(hargaPaket) * jumlahMalam)
-                            let totalHarga = formatter.format(total) // "$1,000.00"
+                            hargaPaket = destinasi[kota][i].Harga
+                            total = (Number(hargaPaket) * jumlahMalam)
+                            totalHarga = formatter.format(total) // "$1,000.00"
                             harga.innerHTML = `${totalHarga}`
                             malam.innerHTML = `Jumlah: ${jumlahMalam} malam`
+                            totalSemua[key] = 0
+                            totalSemua[key] = totalHarga
+                            console.log(totalSemua, 'after reduce')
+                            console.log(totalSemua)
+                            totalAmount = 0
+                            totalSemua[key] = 0
+                            totalSemua[key] = (jumlahMalam * hargaPaket)
+                            for (let key in totalSemua) {
+                                totalSemua[key]
+                                totalAmount += totalSemua[key]
+                            }
+                            amount.innerHTML = `Total: ${formatter.format(totalAmount)}`
                             } else {
                                 kurangiAlert.className = 'kurangiAlert'
                                 kurangiAlert.innerHTML = 'Jumlah Minimal 1 Malam'
@@ -463,18 +490,63 @@ function generateCard(data) {
                     buttonDelete.innerHTML = 'Hapus Produk'
                     buttonDelete.addEventListener('click',deleteData)
                         function deleteData() {
+                            const formatter = new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                currency: 'IDR',
+                                minimumFractionDigits: 0
+                              })
                             divCard.remove()
                             pilihan[key] = 0
+                            console.log('pilihankey', pilihan)
+                            console.log('pilihankey', key)
+                            totalAmount = 0
+                            totalSemua[key] = 0
+                            totalSemua[key] = (pilihan[key] * hargaPaket)
+                            console.log('totalSemua remove', totalSemua)
+                            for (let key in totalSemua) {
+                                console.log('key', key)
+                                totalSemua[key]
+                                console.log(totalSemua[key])
+                                console.log(typeof totalSemua[key])
+                                totalAmount += totalSemua[key]
+                                console.log('ttalAmount', totalAmount)
+                            }
+                            amount.innerHTML = `Total: ${formatter.format(totalAmount)}`
                             if (productCard.childNodes.length == 0) {
                                 productCard.innerHTML = 'Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun'
+                                totalAmount = 0
+                                amount.innerHTML = `Total: ${formatter.format(totalAmount)}`
                             }
                         }
                     divDetails.appendChild(buttonDelete)
 
+                    totalSemua[key] = (jumlahMalam * hargaPaket)
+                    console.log(totalSemua)
                     productCard.appendChild(divCard)
                 }
             }
         }
     }
     }
+    console.log(totalSemua)
+    totalAmount = 0
+    for (let key in totalSemua) {
+        console.log('key', key)
+        totalSemua[key]
+        console.log(totalSemua[key])
+        console.log(typeof totalSemua[key])
+        totalAmount += totalSemua[key]
+        console.log('ttalAmount', totalAmount)
+    }
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      })
+    amount.innerHTML = `Total: ${formatter.format(totalAmount)}`
+}
+
+function checkoutButton() {
+    let pembayaran = document.getElementById('pembayaran')
+    pembayaran.style.display = "block"
 }

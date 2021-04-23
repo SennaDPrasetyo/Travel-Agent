@@ -176,6 +176,11 @@ p.font.head {
     width: 70%;
 }
 
+.checkout-position {
+    margin-top: 100rem;
+    position: fixed;
+}
+
 .button {
     border: none;
     width: 20%;
@@ -236,10 +241,18 @@ p.font.head {
     color: white
 }
 
-.button-position {
+.button-position-keranjang {
     margin-top: 20rem;
-    margin-left: 66rem;
+    margin-left: 20rem;
+    position: relative;
 }
+
+.button-position-daftar {
+    margin-top: 0rem;
+    margin-left: 45rem;
+    position: relative;
+}
+
 ul {
     display: block;
     list-style-type: disc;
@@ -278,4 +291,11 @@ ul {
 
 .kembali {
     padding-top: 10px
+}
+
+.checkout {
+    background-color:darkgreen;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
 }

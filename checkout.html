@@ -12,7 +12,7 @@
       <option value="creditCard">Credit Card</option>
       <option value="bankTransfer">Bank Transfer</option>
     </select>
-    <h1 id="creditCard">            
+    <div id="creditCard">            
       <h3>Payment</h3>
 
       <label for="cname">Name on Card</label>
@@ -29,23 +29,25 @@
       <br>
       <label for="cvv">CVV</label>
       <input type="text" name="cvv" placeholder="616">
+      <br>
+      <input id="checkoutCredit" type="submit" value="Continue to checkout" class="btn">
     </div>
+ </div>
 
-  </div>
-  <br>
-  <input type="submit" value="Continue to checkout" class="btn">
-</form>
 </div></h1>
-    <h1 id="bankTransfer">
+    <div id="bankTransfer">
+      <h3>Payment</h3>
+
       <h2>BANK MANDORO (Virtual Account)</h2>
       <h5>Account Number</h5>
       <h3>1122 3344 5566 7788</h3>
       <p>To ensure Virtual Account number remains the same,<br>
          please complate pament before creating another<br>
          order with Virtual Account.<br>
-         Accepts transfer from Bank Mandiri Only</p>
-    </h1>
-    <input type="submit" value="Continue to checkout" class="btn">
+         Accepts transfer from Bank Mandoro Only</p>
+      <br>
+      <input id="checkoutVirtual" type="submit" value="Continue to checkout" class="btn">
+      </div>
 
 
 
@@ -54,7 +56,7 @@
 
       selectBox.addEventListener('change', function (event) {
         console.log(event.target.value)
-        let display = event.target.value // Product, Cart, Home
+        let display = event.target.value
         if (display === 'home') {
           document.getElementById('creditCard').style.display = 'none'
           document.getElementById('bankTransfer').style.display = 'none'

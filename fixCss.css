@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     background-image: url('flat-lay-yellow-luggage-with-copy-space.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    position: absolute;
 }
 
 .color-decoration {
@@ -29,30 +34,35 @@ div.fixed {
     left: 100px;
 }
 
-img {
+img.img {
     width: 10%;
     position: fixed;
     bottom: 527px;
     left: 7px;
 }
 
-h2 {
+h2.h2-pertama {
     font-size: x-large;
     font-weight: 500;
-    position: fixed;
-    top: 150px;
-    left: 100px;
     font-family: "verdana";
     letter-spacing: 2px;
+    margin-left: 11rem;
+}
+
+.form {
+    margin-left: 11.2rem;
+}
+
+.heading-title {
+    margin-top: 10rem;
 }
 
 .khusus {
     font-weight: 800;
 }
 
-p {
+p.form {
     color: #0a1746;
-    position: fixed;
     top: 195px;
     left: 103px;
     font-family: "Verdana"
@@ -61,7 +71,6 @@ p {
 .col {
 	margin-top: 12px;
 	display: inline-block;
-	position: relative;
     top: 230px;
     left: 95px;
 }
@@ -78,7 +87,6 @@ p {
     background: transparent;
 }
 .textbox ~ .focus-border{
-	position: absolute;
 	bottom: 0;
 	left: 50%;
 	width: 0;
@@ -107,30 +115,54 @@ p {
 	font-weight:normal;
 	padding:8px 13px;
 	text-decoration:none;
-    position: fixed;
-    top: 351px;
-    left: 89px;
     opacity: 0.8;
+    margin-top: 0.5rem;
+    margin-right: 4rem;
 }
 
 .myButton:hover {
 	background-color:transparent;
 }
 
-body {
-    margin: 0px;
+.cards {
+    display: flex;
+    flex-direction: row;
 }
-
-h2, h3 {
-    text-align: center;
-}
-
 .card {
-    display: inline-block;
-    background-color: grey;
-    padding: 10px;
-    margin: 10px;
-    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 24%;
+    margin-top: 20rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.card-2 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 24%;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.opacity {
+    opacity: 1;
+}
+
+  
+.container {
+    padding: 2% 8%;
+}
+
+.font {
+    font-family: "Arial";
+}
+
+p.font.head {
+    font-weight: 600;
+    font-size: normal;
 }
 
 .center {
@@ -167,6 +199,43 @@ h2, h3 {
     width: 30%;
 }
 
+.addToCart {
+    background-color:darkgreen;
+    float:left;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.addToCartGrey {
+    background-color:darkslategrey;
+    float:left;
+    color: black;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.addMalamDiv {
+    display:block;
+    margin-right: 20px;
+    width: auto;
+}
+
+.lihatKeranjang {
+    border: none;
+    width: 20%;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: darkslateblue;
+    color: white
+}
+/*
 .card{
     display: inline-block;
     text-align: center;
@@ -243,3 +312,4 @@ ul {
 .kembali {
     padding-top: 10px
 }
+*/

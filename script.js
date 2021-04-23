@@ -61,12 +61,21 @@ buttonSubmit.addEventListener('click', clickButtonSubmit)
 
 function clickButtonSubmit() {
     konten.innerHTML = "";
+
+
     let inputDestinasi = document.getElementById("tujuan").value
     let inputBudget = document.getElementById("budget").value
 
     console.log(generateDestinasi(inputDestinasi, inputBudget));
+    if (typeof (generateDestinasi(inputDestinasi, inputBudget)) ==="string"){
+        let errorMessage = document.createElement("h1");
+        errorMessage.innerHTML = generateDestinasi(inputDestinasi, inputBudget);
+        konten.appendChild(errorMessage);
+    } else {
+        generateCart(generateDestinasi(inputDestinasi, inputBudget));
 
-    generateCart(generateDestinasi(inputDestinasi, inputBudget));
+    }
+
 
 }
 
@@ -113,8 +122,8 @@ function generateDestinasi(parameterDestinasi, parameterBudget) {
         }
         return output
     }
-
-    if (budget === "0") {
+    
+    if (parameterBudget === "0") {
         let output = {}
 
         for (let i = 0; i < destinasi[parameterDestinasi].length; i++) {
@@ -158,7 +167,7 @@ function generateDestinasi(parameterDestinasi, parameterBudget) {
 let pilihan = {}
 
 console.log(konten);
-console.log(kontenClass);
+
 
 
 function generateCart(destinasi) {
@@ -168,10 +177,7 @@ function generateCart(destinasi) {
 
     for (let key in destinasi) {
         console.log(key);
-        let h1 = document.createElement('h1')
-        h1.innerHTML = key;
-        konten.appendChild(h1);
-
+        
 
         for (let i = 0; i < destinasi[key].length; i++) {
             console.log('i=', i)
@@ -179,19 +185,21 @@ function generateCart(destinasi) {
             divCard.classList.add('card')
 
             let imageLocation = document.createElement('img')
-            imageLocation.classList.add("center")
             imageLocation.src = destinasi[key][i]["Gambar"];
+            imageLocation.style.width = "100%";
             divCard.appendChild(imageLocation)
 
             let divDetail = document.createElement('div')
-            divDetail.classList.add('cardDetails')
+            divDetail.classList.add('container')
             divCard.appendChild(divDetail)
 
-            let h2 = document.createElement("h2")
-            h2.innerHTML = destinasi[key][i]["paket"];
+            let h2 = document.createElement("p")
+            h2.innerHTML = key + " : Paket " + destinasi[key][i]["paket"] ;
+            h2.classList.add("font");
+            h2.classList.add("head");
             divDetail.appendChild(h2);
 
-            let h3 = document.createElement("h3")
+            let h3 = document.createElement("p")
 
         
             const formatter = new Intl.NumberFormat('en-US', {
@@ -203,10 +211,11 @@ function generateCart(destinasi) {
 
             let hargaArray = destinasi[key][i]["Harga"]
             let hargaFormatted = formatter.format(hargaArray) // "$1,000.00"
-            h3.innerHTML = hargaFormatted;
+            h3.innerHTML = "Harga : " + hargaFormatted;
+            h3.classList.add("font");
             divDetail.appendChild(h3);
 
-            let ol = document.createElement("OL")
+            let ol = document.createElement("UL")
 
             for (let j = 0; j < destinasi[key][i]["privilage"].length; j++) {
                 let li = document.createElement("LI");
@@ -255,7 +264,7 @@ function generateCart(destinasi) {
                 }
 
             let inputMalam = document.createElement('input')
-            inputMalam.setAttribute('id', inputMalam)
+            inputMalam.setAttribute('id', "inputMalam")
             inputMalam.value = 1
             inputMalam.className = 'inputMalam'
             addMalamDiv.appendChild(inputMalam)
@@ -289,7 +298,7 @@ function generateCart(destinasi) {
             konten.appendChild(divCard);
 
 
-            konten.appendChild(divButtons);
+            // konten.appendChild(divButtons);
         }
     }
 
@@ -299,6 +308,7 @@ let productCard = document.getElementById("card")
 
 function addToCart(event) {
     let buttonId = Number(event.target.getAttribute('packageId'))
+    let inputMalam = document.getElementById("inputMalam")
     for (let key in destinasi) {
         for (let i = 0; i < destinasi[key].length; i++) {
             if (destinasi[key][i].id == buttonId) {
@@ -306,7 +316,7 @@ function addToCart(event) {
                     pilihan[buttonId] = 0
                 }
                 if (pilihan[buttonId] < 1) {
-                    pilihan[buttonId]++
+                    pilihan[buttonId] += Number(inputMalam.value)
                 }
             }
         }

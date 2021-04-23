@@ -9,13 +9,11 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
   </style>
+
   <title>Travel - Your Travel Agency</title>
 </head>
-<style>
-</style>
-
 <body>
-  <img src="Travel.png" alt="travel">
+  <img src="Travel.png" alt="travel" class="img">
   <div class="fixed">
     <ul>
       <li class="list-style" class="font"><a href="#" class="color-decoration">HOME</a></li>
@@ -23,54 +21,55 @@
       <li class="list-style" class="font" class="li"><a href="#" class="color-decoration">CONTACT</a></li>
     </ul>
   </div>
-  <div><br>
-    <h2>We Take You <span class="khusus">Anywhere</span>.</h2>
-    <p>No. 1 solution to all your travel needs</p>
+  <div class="heading-title"><br>
+    <h2 class="h2-pertama">We Take You <span class="khusus">Anywhere</span>.</h2>
+    <p class="form">No. 1 solution to all your travel needs</p>
   </div>
-  <form action="">
+  <form action="" class="form">
     <div class="col">
       <input id="tujuan" class="textbox" type="text" placeholder="Your Destination Here" value="">
       <span class="focus-border"></span>
     </div>
-    <br>
+      <br>
     <div class="col">
-      <input id="budget" class="textbox" type="number" placeholder="Your Budget Here" value=0>
+      <input id="budget" class="textbox" type="text" placeholder="Your Budget Here" value="0">
       <span class="focus-border"></span>
     </div>
     <div>
-      <!-- <button id="buttonSubmit" class="myButton" onclick="myFunction()">Submit</button> -->
-      <input id="buttonSubmit" type="button" class="myButton" value="Submit">
+        <input id="buttonSubmit" type="button" value="Submit" onclick="" class="myButton">
     </div>
-  </form>
-  </div>
+</form>
+</div>
 
-  <div class="content" id="contentId">
-    <!-- <div class="card">
-            <img src="assets/jkt.png" class="center">
-            <div class="detail">
-                <h2>
-                    Silver
-                </h2>
-                <h3>
-                    Rp. 50.000
-                </h3>
-                <ol>
-                    <li>Hotel + Sarapan</li>
-                    <li>Motor Sewaan</li>
-                    <li>Gratis Tiket Masuk Ancol</li>
-                    <li>Makan Malam</li>
-                </ol>
+  <div class="content cards" id="contentId">
+          <!-- <div class="card">
+              <img src="Ancol.jpg" alt="Ancol" style="width: 100%;">
+              <div class="container">
+                  <p class="font head">Jakarta : Paket Silver</p>
+                  <p class="font">Harga : Rp. 500.000</p>
+                  <ul>
+                      <li class="font">Hotel + sarapan</li>
+                      <li class="font">Motor sewa</li>
+                      <li class="font">Gratis tiket masuk ancol</li>
+                      <li class="font">Makan malam</li>
+                  </ul>
+              </div>
             </div>
-            <div class="buttons">
-                <button onclick="addButton()" class="button" id="1">Add</button>
+            <div class="card">
+                <img src="dufan.jpg" alt="Dufan" style="width: 100%;">
+                <div class="container">
+                    <p class="font head">Jakarta : Paket Gold</p>
+                    <p class="font">Harga : Rp. 1.000.000</p>
+                    <ul>
+                        <li class="font">Hotel + sarapan</li>
+                        <li class="font">Mobil sewa</li>
+                        <li class="font">Gratis tiket masuk ancol + dufan</li>
+                        <li class="font">Makan malam</li>
+                    </ul>
+                </div>
+            </div> -->
 
-                <label for="quantity">Jumlah malam:</label>
-                <input type="text" class="inputMalam" value="1">
-                <button id="plus">+</button>
-                <button id="minus">-</button>
-            </div>
 
-        </div> -->
   </div>
   <div id="cart">
     <hr>
@@ -87,6 +86,90 @@
   <br>
   <br>
   <br>
+=======
+            <div class="card">
+                <img src="Pulau-Pramuka.png" alt="Pulau seribu" style="width: 100%;">
+                <div class="container">
+                    <p class="font head">Jakarta : Paket Platinum</p>
+                    <p class="font">Harga : Rp. 1.500.000</p>
+                    <ul>
+                        <li class="font">Hotel + sarapan</li>
+                        <li class="font">Mobil sewa</li>
+                        <li class="font">Gratis tiket masuk pulau seribu</li>
+                        <li class="font">Makan malam</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card-2 opacity">
+                <img src="Harga_Tiket_Masuk_Orchid_Forest_Lembang_-_Cikole_Bandung.jpg" alt="orchid-forest" style="width: 100%;">
+                <div class="container">
+                    <p class="font head">Bandung : Paket Silver</p>
+                    <p class="font">Harga : Rp. 500.000</p>
+                    <ul>
+                        <li class="font">Hotel + sarapan</li>
+                        <li class="font">Motor sewa</li>
+                        <li class="font">Gratis tiket masuk orchid forest</li>
+                        <li class="font">Makan malam</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-2">
+                <img src="Trans-Studio-Bandung.png" alt="Trans-Studio-Bandung" style="width: 100%;">
+                <div class="container">
+                    <p class="font head">Bandung : Paket Gold</p>
+                    <p class="font">Harga : Rp. 1.000.000</p>
+                    <ul>
+                        <li class="font">Hotel + sarapan</li>
+                        <li class="font">Mobil sewa</li>
+                        <li class="font">Gratis tiket masuk trans studio</li>
+                        <li class="font">Makan malam</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-2">
+                <img src="gunung-putri-lembang-bandung.jpg" alt="Gunung putri" style="width: 100%;">
+                <div class="container">
+                    <p class="font head">Bandung : Paket Platinum</p>
+                    <p class="font">Harga : Rp. 1.500.000</p>
+                    <ul>
+                        <li class="font">Hotel + sarapan</li>
+                        <li class="font">Mobil sewa</li>
+                        <li class="font">Gratis tiket masuk gunung putri</li>
+                        <li class="font">Makan malam</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cart">
+        <hr>
+        <hr>
+    </div>
+    <p>Contoh button buat scroll ke bawah lihat keranjang, nanti bisa dipake</p>
+    <button class='lihatKeranjang' onClick='window.location="#card"'>Lihat Keranjang</button>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<h2 style = >Keranjang Saya</h2>
+<div id="card">Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun</div>
+<button id = 'kembali' class='lihatKeranjang' onClick='window.location="#contentId"'>Kembali ke Daftar Produk</button>  
+<div id="pembayaran">
+<p4> <strong> CHECKOUT </p4> </strong> <br>
+  <p1> Payment Option </p1>
+>>>>>>> Stashed changes
   <br>
   <br>
   <br>
@@ -161,7 +244,6 @@
     })
   </script>
   </div>
-  <script src="input.js"></script>
   <script src="script.js"></script>
 </body>
 

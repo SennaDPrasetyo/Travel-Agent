@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <h1>Judul Situs</h1>
+    <h2>Bagian Input (Senna)</h2>
+    <p>Contoh button buat scroll ke bawah lihat keranjang, nanti bisa dipake</p>
+    <button onClick='window.location="#card"'>Lihat Keranjang</button>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2 id='productList'>Product Cards (Brian)</h2>
+        <button packageId='1' class='addToCart' onclick="addPilihan(event)" style='margin: 10px'>Add to Cart (id 1)</button> 
+        <button packageId='2' class='addToCart' onclick="addPilihan(event)" style='margin: 10px'>Add to Cart (id 2)</button> 
+        <button packageId='3' class='addToCart' onclick="addPilihan(event)" style='margin: 10px'>Add to Cart (id 3)</button> 
+        <button packageId='4' class='addToCart' onclick="addPilihan(event)" style='margin: 10px'>Add to Cart (id 4)</button> 
+        <button packageId='5' class='addToCart' onclick="addPilihan(event)" style='margin: 10px'>Add to Cart (id 5)</button>
+        <button packageId='6' class='addToCart' onclick="addPilihan(event)" style='margin: 10px'>Add to Cart (id 6)</button>
+        <br>
+        <br>
+        <p>Contoh button buat scroll ke bawah lihat keranjang, nanti bisa dipake</p>
+        <button onClick='window.location="#card"'>Lihat Keranjang</button>    
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <h2 style = >Keranjang Saya</h2>
+    <div id="card">Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun</div>
+    <button id = 'kembali' onClick='window.location="#productList"'>Kembali ke Daftar Produk</button>  
+    <script src="cart.js"></script>
+</body>
+</html>

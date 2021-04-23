@@ -94,10 +94,10 @@ function generateDestinasi(parameterDestinasi, parameterBudget) {
 
 
     if (parameterDestinasi === '' && parameterBudget === "0") {
-        return `Silahkan masukkan destinasi dan tujuan anda`
+        alert(`Silahkan masukkan destinasi dan tujuan anda`) 
     }
     if (typeof parameterDestinasi !== 'string') {
-        return `Invalid input`
+        alert('Invalid Input')
     }
 
     if (isNaN(parameterBudget)) {

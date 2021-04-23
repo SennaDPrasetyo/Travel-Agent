@@ -299,3 +299,34 @@ ul {
     padding: 8px 20px;
     border-radius: 10px;
 }
+
+#outer
+{
+    width:100%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 30rem;
+    margin-left: 18rem;
+    position: relative;
+}
+
+.cardImg{
+    float:left;
+    display: inline-block;
+    text-align: right;
+    background-color: white;
+    margin-right: 0px;
+    border-radius: 16px;
+    padding: 8px;
+}
+.cardDetails{
+    float:left;
+    display: inline-block;
+    text-align: left;
+    background-color: white;
+    margin-right: 0px;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+

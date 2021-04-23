@@ -43,12 +43,123 @@ let destinasi = {
 const cart = document.getElementById('cart')
 
 let konten = document.getElementById('contentId')
-let kontenClass = document.getElementsByClassName('content')
+
+
+
+let submitForm = document.getElementById("buttonSubmit");
+
+// submitForm.addEventListener('click', inputed);
+
+function inputed() {
+
+}
+
+
+
+const buttonSubmit = document.getElementById('buttonSubmit')
+buttonSubmit.addEventListener('click', clickButtonSubmit)
+
+function clickButtonSubmit() {
+    konten.innerHTML = "";
+    let inputDestinasi = document.getElementById("tujuan").value
+    let inputBudget = document.getElementById("budget").value
+
+    console.log(generateDestinasi(inputDestinasi, inputBudget));
+
+    generateCart(generateDestinasi(inputDestinasi, inputBudget));
+
+}
+
+
+let inputDestinasi = document.getElementById("tujuan").value
+let inputBudget = document.getElementById("budget").value
+
+// console.log(generateDestinasi(inputDestinasi, inputBudget));
+
+generateCart(generateDestinasi(inputDestinasi, inputBudget));
+
+
+function generateDestinasi(parameterDestinasi, parameterBudget) {
+
+    // parameterDestinasi = document.getElementById("tujuan").value;
+    // parameterBudget = document.getElementById("budget").value;
+
+
+
+    if (parameterDestinasi === '' && parameterBudget === "0") {
+        return `Silahkan masukkan destinasi dan tujuan anda`
+    }
+    if (typeof parameterDestinasi !== 'string') {
+        return `Invalid input`
+    }
+
+    if (isNaN(parameterBudget)) {
+        return "Invalid input";
+    }
+    if (parameterDestinasi === '') {
+        let output = {}
+
+        for (let key in destinasi) {
+            for (let i = 0; i < destinasi[key].length; i++) {
+                let paket = destinasi[key][i]
+                let price = destinasi[key][i]['Harga']
+                if (output[key] === undefined) {
+                    output[key] = []
+                }
+                if (parameterBudget >= price) {
+                    output[key].push(paket)
+                }
+            }
+        }
+        return output
+    }
+
+    if (budget === "0") {
+        let output = {}
+
+        for (let i = 0; i < destinasi[parameterDestinasi].length; i++) {
+            let paket = destinasi[parameterDestinasi][i]
+            if (output[parameterDestinasi] === undefined) {
+                output[parameterDestinasi] = []
+            }
+            output[parameterDestinasi].push(paket)
+        }
+        return output;
+    }
+
+
+    if (parameterDestinasi === 'Jakarta' || parameterDestinasi === 'Bandung') {
+        let output = {}
+
+        for (let key in destinasi) {
+            if (key === parameterDestinasi) {
+                for (let i = 0; i < destinasi[key].length; i++) {
+                    let paket = destinasi[key][i]
+                    let price = destinasi[key][i]['Harga']
+                    if (output[key] === undefined) {
+                        output[key] = []
+                    }
+                    if (Number(parameterBudget) >= price) {
+                        output[key].push(paket)
+                    }
+                }
+            }
+        }
+        return output
+    }
+    if (parameterDestinasi !== 'Jakarta' || parameterDestinasi !== 'Bandung') {
+        return `Mohon maaf destinasi anda belum ada dipaket kami`
+    }
+}
+
+
+
 
 let pilihan = {}
 
 console.log(konten);
 console.log(kontenClass);
+
 
 function generateCart(destinasi) {
     // let location = document.getElementById("destinasi").innerHTML;
@@ -81,11 +192,14 @@ function generateCart(destinasi) {
             divDetail.appendChild(h2);
 
             let h3 = document.createElement("h3")
+
+        
             const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'IDR',
                 minimumFractionDigits: 0
               })
+
 
             let hargaArray = destinasi[key][i]["Harga"]
             let hargaFormatted = formatter.format(hargaArray) // "$1,000.00"
@@ -99,8 +213,11 @@ function generateCart(destinasi) {
                 li.innerHTML = destinasi[key][i]["privilage"][j]
                 ol.appendChild(li)
             }
+
+
             divDetail.appendChild(ol)
 
+            
             let cartDiv = document.createElement('div')
             divDetail.appendChild(cartDiv)
 
@@ -170,15 +287,13 @@ function generateCart(destinasi) {
 
             // console.log(divCard);
             konten.appendChild(divCard);
+
+
+            konten.appendChild(divButtons);
         }
     }
 
 }
-
-generateCart(destinasi);
-
-
-// id: quantity
 
 let productCard = document.getElementById("card")
 

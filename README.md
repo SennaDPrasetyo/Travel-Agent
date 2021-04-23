@@ -96,3 +96,16 @@ Task
 - Handle menampilkan seluruh package yang ada di cart
 - Handle ketika delete cart yang ada
 - Handle submit cart nya
+
+
+
+let submitButton = document.getElementById('submitForm')
+
+      submitButton.addEventListener('click', function () {
+        // Dapeting value dari select box destinasi
+        // Dapein value dari input budget
+        let destination = 'Jakarta'
+        let budget = 1000000
+
+        let result = generateDestinasi(destination, budget)
+      })

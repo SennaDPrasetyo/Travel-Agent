@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="./style.css" rel="stylesheet">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      </style>
+      <title>Travel - Your Travel Agency</title>
+  </head>
+  <style>
+  </style>
+  <body>
+      <img src="Travel.png" alt="travel">
+      <div class="fixed">
+        <ul>
+            <li class="list-style" class="font"><a href="#" class="color-decoration">HOME</a></li>
+            <li class="list-style" class="font"><a href="#" class="color-decoration">ABOUT</a></li>
+            <li class="list-style" class="font" class="li"><a href="#" class="color-decoration">CONTACT</a></li>
+        </ul>
+      </div>
+      <div><br>
+        <h2>We Take You <span class="khusus">Anywhere</span>.</h2>
+        <p>No. 1 solution to all your travel needs</p>
+      </div>
+      <form action="">
+            <div class="col">
+              <input class="textbox" type="text" placeholder="Your Destination Here">
+              <span class="focus-border"></span>
+            </div>
+              <br>
+            <div class="col">
+              <input class="textbox" type="text" placeholder="Your Budget Here">
+              <span class="focus-border"></span>
+            </div>
+            <div>
+                <input type="button" value="Submit" onclick="" class="myButton">
+            </div>
+      </form>
+    </div>
+      <script src="input.js">
+        document.getElementById("submitForm").addEventListener('click', function() {
+            let inputDestinasi = document.getElementById("destinasi").value
+            let inputBudget = document.getElementById("budget").value
+            let result = generateDestinasi(inputDestinasi, inputBudget)
+            console.log(result)
+        })
+      </script>
+  </body>
+</html>
+
+

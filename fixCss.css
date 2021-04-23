@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-image: url('flat-lay-yellow-luggage-with-copy-space.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.color-decoration {
+    color: black;
+    text-decoration: none;
+}
+
+.list-style {
+    list-style-type: none;
+    display: inline-block;
+    width: 90px;
+    font-family: "Roboto", cursive;
+    letter-spacing: 3px;
+}
+div.fixed {
+    position: fixed;
+    left: 510px;
+    bottom: 570px;
+}
+
+.li {
+    left: 100px;
+}
+
+img {
+    width: 10%;
+    position: fixed;
+    bottom: 527px;
+    left: 7px;
+}
+
+h2 {
+    font-size: x-large;
+    font-weight: 500;
+    position: fixed;
+    top: 150px;
+    left: 100px;
+    font-family: "verdana";
+    letter-spacing: 2px;
+}
+
+.khusus {
+    font-weight: 800;
+}
+
+p {
+    color: #0a1746;
+    position: fixed;
+    top: 195px;
+    left: 103px;
+    font-family: "Verdana"
+}
+
+.col {
+	margin-top: 12px;
+	display: inline-block;
+	position: relative;
+    top: 230px;
+    left: 95px;
+}
+
+.textbox {
+	border: 0;
+	padding: 2px 0;
+	border-bottom: 1px solid #ccc;
+	font: 13px/24px "Lato", Arial, sans-serif;
+	color: #333;
+	width: 275px;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+    background: transparent;
+}
+.textbox ~ .focus-border{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 2px; 
+	background-color: #3399FF; 
+	transition: 0.4s;
+}
+.textbox:focus{
+	outline: none;
+}
+.textbox:focus ~ .focus-border{
+	width: 100%;
+	transition: 0.4s;
+	left: 0;
+}
+
+.myButton {
+	background-color:transparent;
+	border-radius:32px;
+	border:1px solid transparent;
+	display:inline-block;
+	cursor: pointer;
+	color:#3a3a3a;
+	font-family:Verdana;
+	font-size:13px;
+	font-weight:normal;
+	padding:8px 13px;
+	text-decoration:none;
+    position: fixed;
+    top: 351px;
+    left: 89px;
+    opacity: 0.8;
+}
+
+.myButton:hover {
+	background-color:transparent;
+}
+
+body {
+    margin: 0px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.card {
+    display: inline-block;
+    background-color: grey;
+    padding: 10px;
+    margin: 10px;
+    width: 30%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.card img {
+    width: 70%;
+}
+
+.button {
+    border: none;
+    width: 20%;
+    padding: 3px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 25px;
+    cursor: pointer;
+}
+
+#plus, #minus {
+    font-size: 20px;
+    width: 6%;
+    float: right;
+}
+
+.inputMalam{
+    
+    width: 30%;
+}
+
+.card{
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    border-radius: 16px;
+    padding: 8px;
+    width: auto;
+}
+
+.cardImg{
+    float:left;
+    display: inline-block;
+    text-align: right;
+    background-color: white;
+    margin-right: 0px;
+    border-radius: 16px;
+    padding: 8px;
+}
+.cardDetails{
+    float:left;
+    display: inline-block;
+    text-align: left;
+    background-color: white;
+    margin-right: 0px;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.card img{
+    width: 150px;
+    display: block;
+    margin: 8px auto;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    padding-inline-start: 11px;
+}
+
+.harga {
+    color:darkred;
+    font-weight: bold
+}
+
+.kurangi {
+    background-color: darkslateblue;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.delete {
+    background-color:darkred;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.kurangiAlert {
+    color: red;
+    font-style: italic;
+}
+
+.alert {
+    color: darkred;
+    font-size:large;
+    font-style: italic 
+}
+
+.kembali {
+    padding-top: 10px
+}

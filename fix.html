@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="./fixCss.css" rel="stylesheet">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      </style>
+      <title>Travel - Your Travel Agency</title>
+  </head>
+  <style>
+  </style>
+  <body>
+      <img src="Travel.png" alt="travel">
+      <div class="fixed">
+        <ul>
+            <li class="list-style" class="font"><a href="#" class="color-decoration">HOME</a></li>
+            <li class="list-style" class="font"><a href="#" class="color-decoration">ABOUT</a></li>
+            <li class="list-style" class="font" class="li"><a href="#" class="color-decoration">CONTACT</a></li>
+        </ul>
+      </div>
+      <div><br>
+        <h2>We Take You <span class="khusus">Anywhere</span>.</h2>
+        <p>No. 1 solution to all your travel needs</p>
+      </div>
+      <form action="">
+            <div class="col">
+              <input id="tujuan" class="textbox" type="text" placeholder="Your Destination Here">
+              <span class="focus-border"></span>
+            </div>
+              <br>
+            <div class="col">
+              <input id="budget" class="textbox" type="text" placeholder="Your Budget Here">
+              <span class="focus-border"></span>
+            </div>
+            <div>
+                <input id="buttonSubmit" type="button" value="Submit" onclick="" class="myButton">
+            </div>
+      </form>
+    </div>
+      <script src="input.js">
+        document.getElementById("submitForm").addEventListener('click', function() {
+            let inputDestinasi = document.getElementById("destinasi").value
+            let inputBudget = document.getElementById("budget").value
+            let result = generateDestinasi(inputDestinasi, inputBudget)
+            console.log(result)
+        })
+      </script>
+    <div class="content" id="contentId">
+        <!-- <div class="card">
+            <img src="assets/jkt.png" class="center">
+            <div class="detail">
+                <h2>
+                    Silver
+                </h2>
+                <h3>
+                    Rp. 50.000
+                </h3>
+                <ol>
+                    <li>Hotel + Sarapan</li>
+                    <li>Motor Sewaan</li>
+                    <li>Gratis Tiket Masuk Ancol</li>
+                    <li>Makan Malam</li>
+                </ol>
+            </div>
+            <div class="buttons">
+                <button onclick="addButton()" class="button" id="1">Add</button>
+
+                <label for="quantity">Jumlah malam:</label>
+                <input type="text" class="inputMalam" value="1">
+                <button id="plus">+</button>
+                <button id="minus">-</button>
+            </div>
+
+        </div> -->
+    </div>
+    <div id="cart">
+        <hr>
+        <hr>
+    </div>
+    <script src="script.js">
+    </script>
+    <p>Contoh button buat scroll ke bawah lihat keranjang, nanti bisa dipake</p>
+    <button onClick='window.location="#card"'>Lihat Keranjang</button>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<h2 style = >Keranjang Saya</h2>
+<div id="card">Yah, Keranjangnya Kosong. Kamu Belum Pilih Paket Apapun</div>
+<button id = 'kembali' onClick='window.location="#contentId"'>Kembali ke Daftar Produk</button>  
+<script src="cart.js"></script>
+<div id="pembayaran">
+<p4> <strong> CHECKOUT </p4> </strong> <br>
+  <p1> Payment Option </p1>
+  <br>
+    <select id="selectPage">
+      <option value='home'>Select Payment</option>
+      <option value="creditCard">Credit Card</option>
+      <option value="bankTransfer">Bank Transfer</option>
+    </select>
+    <h1 id="creditCard">            
+      <h3>Payment</h3>
+      <label for="cname">Name on Card</label>
+      <input type="text" name="cardname" placeholder="Your Name">
+      <br>
+      <label for="ccnum">Credit card number</label>
+      <input type="text" name="cardnumber" placeholder="1111-2222-3333-4444">
+      <br>
+      <label for="expmonth">Exp Month</label>
+      <input type="text" name="expmonth" placeholder="December">
+      <br>
+      <label for="expyear">Exp Year</label>
+      <input type="text" name="expyear" placeholder="2022">
+      <br>
+      <label for="cvv">CVV</label>
+      <input type="text" name="cvv" placeholder="616">
+    </div>
+  </div>
+  <br>
+  <input id="checkoutCredit" type="submit" value="Continue to checkout" class="btn">
+</form>
+</div></h1>
+    <h1 id="bankTransfer">
+      <h2>BANK MANDORO (Virtual Account)</h2>
+      <h5>Account Number</h5>
+      <h3>1122 3344 5566 7788</h3>
+      <p>To ensure Virtual Account number remains the same,<br>
+         please complate pament before creating another<br>
+         order with Virtual Account.<br>
+         Accepts transfer from Bank Mandiri Only</p>
+    </h1>
+    <input id="checkoutVirtual" type="submit" value="Continue to checkout" class="btn">
+    <script>
+      let selectBox = document.getElementById('selectPage')
+
+      selectBox.addEventListener('change', function (event) {
+        console.log(event.target.value)
+        let display = event.target.value // Product, Cart, Home
+        if (display === 'home') {
+          document.getElementById('creditCard').style.display = 'none'
+          document.getElementById('bankTransfer').style.display = 'none'
+        }
+        if (display === 'creditCard') {
+          document.getElementById('creditCard').style.display = 'block'
+          document.getElementById('bankTransfer').style.display = 'none'
+        }
+  
+        if (display === 'bankTransfer') {
+          document.getElementById('creditCard').style.display = 'none'
+          document.getElementById('bankTransfer').style.display = 'block'
+        }
+      })
+   </script>
+</div>
+</body>
+</html>

@@ -235,44 +235,11 @@ p.font.head {
     background-color: darkslateblue;
     color: white
 }
-/*
-.card{
-    display: inline-block;
-    text-align: center;
-    border: 1px solid black;
-    background-color: white;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    border-radius: 16px;
-    padding: 8px;
-    width: auto;
-}
 
-.cardImg{
-    float:left;
-    display: inline-block;
-    text-align: right;
-    background-color: white;
-    margin-right: 0px;
-    border-radius: 16px;
-    padding: 8px;
+.button-position {
+    margin-top: 20rem;
+    margin-left: 66rem;
 }
-.cardDetails{
-    float:left;
-    display: inline-block;
-    text-align: left;
-    background-color: white;
-    margin-right: 0px;
-    border-radius: 16px;
-    padding: 8px;
-}
-
-.card img{
-    width: 150px;
-    display: block;
-    margin: 8px auto;
-}
-
 ul {
     display: block;
     list-style-type: disc;
@@ -312,4 +279,3 @@ ul {
 .kembali {
     padding-top: 10px
 }
-*/

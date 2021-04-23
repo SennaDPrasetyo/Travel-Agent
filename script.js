@@ -4,19 +4,19 @@ let destinasi = {
         paket: 'Silver', 
         privilage: ['Hotel + Sarapan', 'Motor Sewaan', 'Gratis Tiket Masuk Ancol', 'Makan Malam'],
         Harga: 500000,
-        Gambar: './toa-heftiba-a9pFSC8dTlo-unsplash.jpg'
+        Gambar: './Ancol.jpg'
         },
         { id: '2', 
         paket: 'Gold', 
         privilage: ['Hotel + Sarapan', 'Mobil Sewaan', 'Gratis tiket masuk ancol + dufan', 'Makan Malam'],
         Harga: 1000000,
-        Gambar: './tiket_dufan_ancol_free_tiket_ancol__tiket_dunia_fantasi_ancol_1565117487_18f9795b_progressive.jpg'
+        Gambar: './dufan.jpg'
         },
         { id: '3', 
         paket: 'Platinum', 
         privilage: ['Hotel + Sarapan', 'Mobil Sewaan', 'Gratis tiket masuk ancol + pulau seribu', 'Makan Malam'],
         Harga: 1500000,
-        Gambar: './photo-1536392706976-e486e2ba97af.jpg'
+        Gambar: './Pulau-Pramuka.png'
         },
     ],
     'Bandung': [
@@ -24,13 +24,13 @@ let destinasi = {
         paket: 'Silver', 
         privilage: ['Hotel + Sarapan', 'Motor Sewaan', 'Gratis tiket masuk orchid forest', 'Makan Malam'],
         Harga: 500000,
-        Gambar: './Orchid%20Forest%20Cikole%20Lembang.jpg'
+        Gambar: './Harga_Tiket_Masuk_Orchid_Forest_Lembang_-_Cikole_Bandung.jpg'
         },
         { id: '5', 
         paket: 'Gold', 
         privilage: ['Hotel + Sarapan', 'Mobil Sewaan', 'Gratis tiket masuk trans studio', 'Makan Malam'],
         Harga: 1000000,
-        Gambar: './Spektakuler-Ayo-Jajal-Wahana-di-Trans-Studio-Cibubur-01-Finansialku.jpg'
+        Gambar: './Trans-Studio-Bandung.png'
         },
         { id: '6', 
         paket: 'Platinum', 
@@ -84,8 +84,6 @@ let inputDestinasi = document.getElementById("tujuan").value
 let inputBudget = document.getElementById("budget").value
 
 // console.log(generateDestinasi(inputDestinasi, inputBudget));
-
-generateCart(generateDestinasi(inputDestinasi, inputBudget));
 
 
 function generateDestinasi(parameterDestinasi, parameterBudget) {

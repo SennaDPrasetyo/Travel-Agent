@@ -3,19 +3,19 @@ let destinasi = {
         { id: '1', 
         paket: 'Silver', 
         privilage: ['Hotel + Sarapan', 'Motor Sewaan', 'Gratis Tiket Masuk Ancol', 'Makan Malam'],
-        Harga: '500,000',
+        Harga: 500000,
         Gambar: './toa-heftiba-a9pFSC8dTlo-unsplash.jpg'
         },
         { id: '2', 
         paket: 'Gold', 
         privilage: ['Hotel + Sarapan', 'Mobil Sewaan', 'Gratis tiket masuk ancol + dufan', 'Makan Malam'],
-        Harga: '1,000,000',
+        Harga: 1000000,
         Gambar: './tiket_dufan_ancol_free_tiket_ancol__tiket_dunia_fantasi_ancol_1565117487_18f9795b_progressive.jpg'
         },
         { id: '3', 
         paket: 'Platinum', 
         privilage: ['Hotel + Sarapan', 'Mobil Sewaan', 'Gratis tiket masuk ancol + pulau seribu', 'Makan Malam'],
-        Harga: '1,500,000',
+        Harga: 1500000,
         Gambar: './photo-1536392706976-e486e2ba97af.jpg'
         },
     ],
@@ -23,19 +23,19 @@ let destinasi = {
         { id: '4', 
         paket: 'Silver', 
         privilage: ['Hotel + Sarapan', 'Motor Sewaan', 'Gratis tiket masuk orchid forest', 'Makan Malam'],
-        Harga: '500,000',
+        Harga: 500000,
         Gambar: './Orchid%20Forest%20Cikole%20Lembang.jpg'
         },
         { id: '5', 
         paket: 'Gold', 
         privilage: ['Hotel + Sarapan', 'Mobil Sewaan', 'Gratis tiket masuk trans studio', 'Makan Malam'],
-        Harga: '1,000,000',
+        Harga: 1000000,
         Gambar: './Spektakuler-Ayo-Jajal-Wahana-di-Trans-Studio-Cibubur-01-Finansialku.jpg'
         },
         { id: '6', 
         paket: 'Platinum', 
         privilage: ['Hotel + Sarapan', 'Mobil Sewaan', 'Sunrise trip gunung putri Lembang', 'Makan Malam'],
-        Harga: '1,500,000',
+        Harga: 1500000,
         Gambar: './gunung-putri-lembang-bandung.jpg'
         }] 
  }
@@ -81,7 +81,15 @@ function generateCart(destinasi) {
             divDetail.appendChild(h2);
 
             let h3 = document.createElement("h3")
-            h3.innerHTML = "Rp " + destinasi[key][i]["Harga"];
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+              })
+
+            let hargaArray = destinasi[key][i]["Harga"]
+            let hargaFormatted = formatter.format(hargaArray) // "$1,000.00"
+            h3.innerHTML = hargaFormatted;
             divDetail.appendChild(h3);
 
             let ol = document.createElement("OL")
@@ -282,8 +290,6 @@ function generateCard(data) {
                     harga.className = 'harga'
                     let jumlahMalam = data[key]
                     let hargaPaket = destinasi[kota][i].Harga
-                    let hargaBaru = hargaPaket.replace(/,/g, '')
-                    console.log(hargaBaru, typeof hargaBaru)
 
                     const formatter = new Intl.NumberFormat('en-US', {
                         style: 'currency',
@@ -291,11 +297,11 @@ function generateCard(data) {
                         minimumFractionDigits: 0
                       })
                       
-                    let total = (Number(hargaBaru) * jumlahMalam)
+                    let total = (hargaPaket * jumlahMalam)
                     console.log('total=', total)
                     let totalHarga = formatter.format(total) // "$1,000.00"
 
-                    harga.innerHTML = `Rp ${totalHarga}`
+                    harga.innerHTML = `${totalHarga}`
                     divDetails.appendChild(harga)
 
                     let malam = document.createElement('p')
@@ -316,10 +322,9 @@ function generateCard(data) {
                             malam.innerHTML = ''
                             jumlahMalam -= 1
                             let hargaPaket = destinasi[kota][i].Harga
-                            let hargaBaru = hargaPaket.replace(/,/g, '')
-                            let total = (Number(hargaBaru) * jumlahMalam)
+                            let total = (Number(hargaPaket) * jumlahMalam)
                             let totalHarga = formatter.format(total) // "$1,000.00"
-                            harga.innerHTML = `Rp ${totalHarga}`
+                            harga.innerHTML = `${totalHarga}`
                             malam.innerHTML = `Jumlah: ${jumlahMalam} malam`
                             } else {
                                 kurangiAlert.className = 'kurangiAlert'

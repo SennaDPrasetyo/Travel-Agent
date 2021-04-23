@@ -396,9 +396,9 @@ function generateCard(data) {
                     divImage.classList.add('cardImg')
                     divCard.appendChild(divImage)
 
-                    let imgPackage = document.createElement('img')
-                    imgPackage.src = destinasi[kota][i].Gambar
-                    divImage.appendChild(imgPackage)
+                    // let imgPackage = document.createElement('img')
+                    // imgPackage.src = destinasi[kota][i].Gambar
+                    // divImage.appendChild(imgPackage)
 
                     let divDetails = document.createElement('div')
                     divDetails.classList.add('cardDetails')
